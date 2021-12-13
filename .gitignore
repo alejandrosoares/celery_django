@@ -3,4 +3,4 @@ venv
 __pycache__
 
 # Files
-env/*
+project/env/*
