@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'emails/css/main.css' %}">
+    <title>Sending Emails</title>
+</head>
+<body>
+    <main class="main">
+        <div class="title">
+            <h1>Sending Emails</h1>
+        </div>
+        <div class="status d-none">
+            <div class="loader">
+                <div class="loader-completed d-none"></div>
+                <span class="loader-percent">100%</span>
+                <img class="loader-img" src="{% static 'emails/img/loader.svg' %}" alt="Loader">
+            </div>
+            <div class="message">
+                <p>Pending...</p>
+            </div>
+        </div>
+        <form class="form">
+            {% csrf_token %}
+            <label>Email:
+                <input type="email" class="email" name="email" value="{{ default_email }}" required>
+            </label>
+            <label>Number of emails:
+                <input type="number" class="number" name="number" value="{{ default_number }}" min="0" max="20" required>
+            </label>
+            <button type="submit">Send Emails</button>
+        </form>
+
+        <div id="ref" class="d-none">
+            <input type="url" class="url-send" value="{% url 'emails:send' %}">
+            <input type="url" class="url-progress" value="/celery_progress/">
+        </div>
+    </main>
+    
+    <script src="{% static 'celery_progress/celery_progress.js'%}"></script>
+    <script src="{% static 'emails/js/main.js'%}"></script>
+</html>

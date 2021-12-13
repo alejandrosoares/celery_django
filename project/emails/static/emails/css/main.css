@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
+
+:root{
+    --white: white;
+    --dark: #343a40;
+    --gray: #a6a6a6;
+    --success: #28a745;
+    --failure: #dc3545;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(255,203,0);
+    background: linear-gradient(145deg, rgba(255,203,0,1) 0%, rgba(102,92,57,1) 74%); 
+}
+.main{
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+section{
+    margin: 50px;
+}
+.d-none{
+    display: none !important;
+}
+
+.btn-disabled{
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.input-disabled{
+    opacity: 0.5; 
+}
+
+
+
+/* STATUS */
+
+.status .message{
+    font-size: var(--lg);
+    font-weight: bold;
+}
+.loader{
+    display: block;
+    margin: 5px auto;
+}
+.loader{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: var(--dark);
+}
+.loader-completed{
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--dark);
+    border-radius: 50%;
+}
+.loader-percent{
+    font-weight: bold;
+    font-size: var(--sm);
+    display: inline-block;
+    width: 45px;
+    line-height: 20px;
+    padding: auto;
+    text-align: center;
+    position: absolute;
+    left: calc((100% - 45px)/2);
+    top: calc((100% - 20px)/2); 
+}
+
+.loader-percent.loader-percent-completed{
+    font-size: var(--md);
+}
+.loader-percent-completed.success{
+    color: var(--success);
+}
+.loader-percent-completed.failure{
+    color: var(--failure);
+}
+
+.loader-completed.success{
+    border:3px solid var(--success);
+}
+.loader-completed.failure{
+    border:3px solid var(--failure);
+}
+
+/* FORM */
+.form{
+    width: 100%;
+}
+.form label{
+    display: block;
+    margin-bottom: 10px;
+}
+.form input{
+    color: var(--dark);
+    width: 100%;
+    margin-top: 2px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--gray);
+    font-size: var(--md);
+}
+
+.form button{
+    width: 100%;
+    margin-top: 24px;
+    font-size: var(--lg);
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--dark);
+    color: var(--white);
+}

@@ -1,0 +1,6 @@
+django==3.2.9
+celery>=3.1.26
+redis>=4.0.2
+django-celery-results==2.2.0 
+django-redis==5.1.0
+sqlalchemy==1.4.28
