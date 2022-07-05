@@ -1,4 +1,4 @@
-django==3.2.10
+django==3.2.14
 celery>=3.1.26
 redis>=4.0.2
 django-celery-results==2.2.0 
